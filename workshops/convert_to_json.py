@@ -35,3 +35,5 @@ text_with_context = "ละเมิดลิขสิทธิ์ตามม�
 conf, sig = cal_confidence(text_with_context, 2)
 print(f"Confidence: {conf: 2f}")
 print(f"Signals: {sig}")
+
+#ส่งงานครับอาจารย์
