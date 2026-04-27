@@ -25,7 +25,15 @@ tokens = legal_tokenizer(test_text)
 # print(f"Input: {test_text}")
 # print(f"Output: {tokens}")
 
- # 2. Context-Aware Entity Extraction
+#การวัดค่าความกำกวม (Ambiguity Rate) เทียบระหว่าง dictionary base+regex กับ "WangchanBERTa"
+def calculate_baseline_ambiguity(text):
+    matches = []
+    for word in LEGAL_KEYWORDS:
+        for m in re.findal(word,text):
+            matches.append((m.start(), m.end(), word))
+            #ตรวจสอบการทับซ้อน ()
+
+#2. Context-Aware Entity Extraction
 def extract_legal_entities(text):
     entities = []
     # จำลองหาความผิด ประเภทของ IP (IP_TYPE) และหาการกระทำ (ACTION)
